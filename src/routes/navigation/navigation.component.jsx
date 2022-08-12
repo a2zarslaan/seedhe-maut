@@ -1,11 +1,18 @@
 import { Fragment } from "react"
-import { Outlet } from "react-router-dom"
+import { Link, Outlet } from "react-router-dom"
+import Logo from '../../assets/logo.png' 
+import './navigation.styles.scss'
 
 const Navigation = () => {
 return (
     <Fragment>
         <div className="navigation">
-            <h1>I am the Nav bar</h1>
+            <Link className="logo-contianer" to='/'>
+                <img src={Logo} alt='logo' className='logo' />
+            </Link>
+            <div className="nav-links-container">
+                <Link className="nav-link" to='/shop'>Shop</Link>
+            </div>
         </div>
         <Outlet />
     </Fragment>
