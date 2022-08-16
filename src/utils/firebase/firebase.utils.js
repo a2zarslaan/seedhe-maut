@@ -22,8 +22,10 @@ provider.setCustomParameters({
     prompt: 'select_account'
 })
 
+// an app has only a single auth, it helps stay upto date on the authentication states happening throughout the app
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+export const signInWithGoogleRedirect = () => signInWithRedirect(auth, provider);
 
 export const db = getFirestore();
 
