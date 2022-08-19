@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils";
 import FormInput from '../form-input/form-input.component'
+import './sign-up-form.styles.scss'
 
 //creating an object instead of 4 useStates
 const defaultFormFields = {
@@ -46,8 +47,9 @@ const SignUpForm = () => {
     }
 
     return(
-        <div>
-            <h1>Sign in with your email and password</h1>
+        <div className="sign-up-container">
+            <h1></h1>
+            <span>Sign in with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput label="Display Name" type="text" required onChange={handleChange} name='displayName'  value={displayName}/>
 
