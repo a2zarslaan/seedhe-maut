@@ -4,7 +4,7 @@
 import { auth, signInWithGooglePopup, signInWithGoogleRedirect, createUserDocumentFromAuth } from "../../utils/firebase/firebase.utils"
 import SignUpForm from "../../components/sign-up-form/sign-up-form.component";
 
-const SignIn = () => {
+const Authentication = () => {
     //this is how redirected login will work
     // useEffect(() => {
     //     async function asyncRedirctResult() {
@@ -34,4 +34,4 @@ const SignIn = () => {
     )
 }
 
-export default SignIn
+export default Authentication
