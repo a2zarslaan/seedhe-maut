@@ -70,4 +70,5 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 export const signOutUser = async () => await signOut(auth);
 
+//part of the observer pattern, this listener always listens for changes in auth, making it easier to handle auth events
 export const onAuthStateChangedListener = (callback) => onAuthStateChanged(auth, callback);
