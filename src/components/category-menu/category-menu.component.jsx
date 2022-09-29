@@ -1,4 +1,4 @@
-import CategoryItem from '../category-item/category-item.component';
+import CategoryMenuItem from '../category-menu-item/category-menu-item.component';
 import './category-menu.styles.scss'
 
 const CategoryMenu = ({categories}) => {
@@ -6,7 +6,7 @@ const CategoryMenu = ({categories}) => {
         <div className="categories-container">
             {
                 categories.map((category) => (
-                    <CategoryItem key={category.id} category={category} />
+                    <CategoryMenuItem key={category.id} category={category} />
                 ))
             }
         </div>
