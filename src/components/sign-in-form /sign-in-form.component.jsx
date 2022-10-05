@@ -2,8 +2,8 @@
 import { useState} from "react"
 import { signInWithGooglePopup, createUserDocumentFromAuth, signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase.utils";
 import FormInput from '../form-input/form-input.component'
-import Button from "../button/button.component";
-import './sign-in-form.styles.scss'
+import Button, {BUTTON_TYPE_CLASSES} from "../button/button.component";
+import {SignInContainer, Heading, ButtonsContainer} from './sign-in-form.styles'
 
 //creating an object instead of 4 useStates
 const defaultFormFields = {
@@ -51,20 +51,20 @@ const SignInForm = () => {
 
 
     return(
-        <div className="sign-up-container">
-            <h2>Already have an account?</h2>
+        <SignInContainer>
+            <Heading>Already have an account?</Heading>
             <span>Sign in with your email and password</span>
             <form onSubmit={handleSubmit}>
                 <FormInput label='Email' type="email" required onChange={handleChange} name='email' value={email}/>
                 
                 <FormInput label="Password" type="password" required onChange={handleChange} name='password' value={password}/>
-                <div className="buttons-container">
+                <ButtonsContainer>
                     <Button type="submit">Sign In</Button>
                     {/* by default, buttons in forms are of type submit, so to prevent form submission when google sign in is clicked, change the button type to button */}
-                    <Button type='submit' onClick={signInWithGoogle} buttonType='google'>Google Sign In</Button>
-                </div>
+                    <Button type='submit' onClick={signInWithGoogle} buttonType = {BUTTON_TYPE_CLASSES.google}>Google Sign In</Button>
+                </ButtonsContainer>
             </form>
-        </div>
+        </SignInContainer>
     )
 }
 
