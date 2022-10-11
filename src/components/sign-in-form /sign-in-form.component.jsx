@@ -15,7 +15,6 @@ const SignInForm = () => {
     const [formFields, setFormFields]  = useState(defaultFormFields);
     const {email, password} = formFields;
 
-
     const resetFormFields = () => {
         setFormFields(defaultFormFields);
     }
@@ -24,7 +23,7 @@ const SignInForm = () => {
         event.preventDefault();
 
         try {
-            const {user} = await signInAuthUserWithEmailAndPassword(email,password);
+            await signInAuthUserWithEmailAndPassword(email,password);
             resetFormFields();
         }catch(error) {
             switch(error.code){
@@ -61,7 +60,7 @@ const SignInForm = () => {
                 <ButtonsContainer>
                     <Button type="submit">Sign In</Button>
                     {/* by default, buttons in forms are of type submit, so to prevent form submission when google sign in is clicked, change the button type to button */}
-                    <Button type='submit' onClick={signInWithGoogle} buttonType = {BUTTON_TYPE_CLASSES.google}>Google Sign In</Button>
+                    <Button type='button' onClick={signInWithGoogle} buttonType = {BUTTON_TYPE_CLASSES.google}>Google Sign In</Button>
                 </ButtonsContainer>
             </form>
         </SignInContainer>
