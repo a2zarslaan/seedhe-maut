@@ -4,8 +4,8 @@
         "es2021": true
     },
     "extends": [
-        "plugin:react/recommended",
-        "airbnb"
+        "airbnb",
+        "plugin:prettier/recommended",
     ],
     "overrides": [
     ],
@@ -14,11 +14,13 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+				"prettier"
     ],
     "rules": {
         "import/prefer-default-export": "off",
         "react/react-in-jsx-scope": "off",
-        "max-len": "off"
+        "max-len": "off",
+				"prettier/prettier": ["error"]
     }
 }
